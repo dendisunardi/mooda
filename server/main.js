@@ -9,6 +9,26 @@ const compress = require('compression')
 const app = express()
 app.use(compress())
 
+// remove this for test
+const userInfo = {
+  full_name: 'Dendi Sunardi',
+  user_email: 'dendi.sunardi@tokopedia.com',
+  admin_id: 1533218,
+  status: 1,
+  sex: 1,
+  id: '94301a540e7790afa01bb27de7e860a3',
+  remember_me: 0,
+  roles: [12,109,2],
+  image: 'http://192.168.100.160:3001/image/v1/u/5480045/user_thumbnail/desktop',
+  access_token: 'FyrBB9TpRP2qwIMMPbSNPQ'
+}
+
+var user = JSON.parse(JSON.stringify(userInfo))
+
+app.get('/getuserinfo', (req, res) => {
+  res.json(user)
+})
+// until this remove
 // ------------------------------------
 // Apply Webpack HMR Middleware
 // ------------------------------------
