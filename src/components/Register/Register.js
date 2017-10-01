@@ -215,9 +215,10 @@ class Register extends Component {
       return { reg_step:newState }
     })
     const users = this.state.users
-    const url = 'https://mooda-api.herokuapp.com/api/v1/users/users'
+    const url = 'http://188.166.231.171/api/v1/users/register'
     fetch(url, {
       method : 'POST',
+      mode : 'no-cors',
       headers : {
         'Accept' : 'application/json',
         'Content-Type' : 'application/json'
